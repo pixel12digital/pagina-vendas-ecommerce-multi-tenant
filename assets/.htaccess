@@ -1,0 +1,2 @@
+# MIME type correto para vídeo MP4
+AddType video/mp4 .mp4
