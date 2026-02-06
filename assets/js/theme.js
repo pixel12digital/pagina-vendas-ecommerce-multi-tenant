@@ -484,26 +484,45 @@ var videoControllerInit = function videoControllerInit() {
   var videoContainer = document.querySelectorAll('[data-video-player-container]');
   if (videoContainer) {
     videoContainer.forEach(function (container) {
-      var videoPlayer = container.querySelector('[data-video-player');
-      var playButton = container.querySelector('[data-play-button]');
-      var videoPlayed = function videoPlayed() {
-        container.classList.toggle('video-player-paused');
-        container.classList.toggle('video-player-play');
-      };
-      var videoPaused = function videoPaused() {
-        container.classList.toggle('video-player-play');
-        container.classList.toggle('video-player-paused');
-      };
-      playButton.addEventListener('click', function () {
-        if (videoPlayer.paused) {
-          videoPlayer.play();
-          videoPaused();
-        } else {
-          videoPlayer.pause();
-          videoPlayed();
+      var youtubeId = container.getAttribute('data-youtube-id');
+      var thumbnail = container.querySelector('[data-youtube-thumbnail]');
+      var embedWrap = container.querySelector('[data-youtube-embed]');
+      var iframe = embedWrap ? embedWrap.querySelector('iframe') : null;
+
+      if (youtubeId && thumbnail && embedWrap && iframe) {
+        container.addEventListener('click', function (e) {
+          if (embedWrap.style.display === 'none') {
+            thumbnail.style.display = 'none';
+            embedWrap.style.display = 'block';
+            iframe.src = 'https://www.youtube.com/embed/' + youtubeId + '?autoplay=1&rel=0&modestbranding=1';
+            container.classList.remove('video-player-paused');
+            container.classList.add('video-player-play');
+            container.style.cursor = 'default';
+          }
+        });
+      } else {
+        var videoPlayer = container.querySelector('[data-video-player]');
+        if (videoPlayer) {
+          var videoPlayed = function videoPlayed() {
+            container.classList.toggle('video-player-paused');
+            container.classList.toggle('video-player-play');
+          };
+          var videoPaused = function videoPaused() {
+            container.classList.toggle('video-player-play');
+            container.classList.toggle('video-player-paused');
+          };
+          container.addEventListener('click', function () {
+            if (videoPlayer.paused) {
+              videoPlayer.play();
+              videoPaused();
+            } else {
+              videoPlayer.pause();
+              videoPlayed();
+            }
+          });
+          videoPlayer.addEventListener('ended', videoPaused);
         }
-      });
-      videoPlayer.addEventListener('ended', videoPaused);
+      }
     });
   }
 };

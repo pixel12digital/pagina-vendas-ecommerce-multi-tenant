@@ -56,6 +56,23 @@ footer .footer-bottom-bar {
 }
 
 /* -------------------------------------------------------------------------- */
+/* Video player - ocultar botão play, capa inteira clicável                    */
+/* -------------------------------------------------------------------------- */
+[data-video-player-container] {
+  cursor: pointer;
+}
+[data-video-player-container] .play-button {
+  display: none !important;
+}
+
+/* YouTube embed - container com aspect ratio 16:9                              */
+.youtube-video-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+/* -------------------------------------------------------------------------- */
 /*                                brainwaveio Button                               */
 /* -------------------------------------------------------------------------- */
 /* prettier-ignore */
