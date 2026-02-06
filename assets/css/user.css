@@ -72,6 +72,11 @@ footer .footer-bottom-bar {
   overflow: hidden;
 }
 
+/* Loading do vídeo - spinner durante buffering                                 */
+.video-loading {
+  z-index: 20;
+}
+
 /* Overlays para ocultar botões/logo do YouTube (bloqueiam clique)              */
 .youtube-embed-overlay {
   position: absolute;
