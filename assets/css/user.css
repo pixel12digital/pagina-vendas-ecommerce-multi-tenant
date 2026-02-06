@@ -13,6 +13,143 @@
 }
 
 /* -------------------------------------------------------------------------- */
+/* Navbar mobile - header em 1 linha (logo | botão | hambúrguer)                */
+/* Apenas mobile: max-width 767.98px (desktop intocado)                         */
+/* -------------------------------------------------------------------------- */
+@media (max-width: 767.98px) {
+  #navbar .container-fluid {
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0.5rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  /* Menu aberto: classe adicionada via JS no show.bs.collapse (antes da animação) */
+  #navbar.navbar-menu-opening .container-fluid {
+    flex-wrap: wrap;
+  }
+  #navbar.navbar-menu-opening .navbar-collapse {
+    flex-basis: 100%;
+    width: 100%;
+  }
+  /* Logo no mobile (tamanho legível) */
+  #navbar .container-fluid > a:first-child {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    max-width: 7.5rem;
+  }
+  #navbar .container-fluid > a:first-child img {
+    max-height: 2.25rem;
+    width: auto !important;
+    max-width: 100%;
+    object-fit: contain;
+  }
+  /* Botão WhatsApp compacto no mobile */
+  #navbar .container-fluid .btn-primary.btn-sm {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.5rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+    line-height: 1.2;
+  }
+  /* Hambúrguer sem encolher */
+  #navbar .navbar-toggler {
+    flex-shrink: 0;
+    padding: 0.25rem 0.5rem;
+  }
+}
+/* Refinamento para telas ≤360px */
+@media (max-width: 360px) {
+  #navbar .container-fluid > a:first-child {
+    max-width: 6.5rem;
+  }
+  #navbar .container-fluid > a:first-child img {
+    max-height: 2rem;
+  }
+  #navbar .container-fluid .btn-primary.btn-sm {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.4rem;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Hero - textos e hierarquia (mobile primeiro, depois desktop)                 */
+/* -------------------------------------------------------------------------- */
+/* Mobile (360px referência) */
+.hero-text-block .hero-headline {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+.hero-text-block .hero-subheadline {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+}
+.hero-text-block .hero-descricao {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+.hero-text-block .hero-cta {
+  margin-bottom: 0.75rem;
+}
+.hero-text-block .hero-microtexto {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  margin-bottom: 0;
+}
+
+/* Mobile: subheadline e bloco de texto alinhados à esquerda */
+@media (max-width: 767.98px) {
+  .hero-text-block,
+  .hero-text-block .hero-subheadline {
+    text-align: left;
+  }
+  .hero-text-block .hero-cta-wrapper {
+    justify-content: flex-start;
+  }
+}
+
+/* Desktop - mesmos textos, proporções maiores e equilibradas */
+@media (min-width: 768px) {
+  .hero-text-block .hero-headline {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .hero-text-block .hero-subheadline {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  .hero-text-block .hero-descricao {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    max-width: 28rem;
+  }
+  .hero-text-block .hero-cta {
+    margin-bottom: 1rem;
+  }
+  .hero-text-block .hero-microtexto {
+    font-size: 0.8125rem;
+  }
+}
+@media (min-width: 992px) {
+  .hero-text-block .hero-headline {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  .hero-text-block .hero-subheadline {
+    font-size: 1.375rem;
+    margin-bottom: 1rem;
+  }
+  .hero-text-block .hero-descricao {
+    font-size: 1.0625rem;
+    margin-bottom: 1.75rem;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
 /* Section #como-funciona - layout ajuste fino (imagem + respiro)               */
 /* -------------------------------------------------------------------------- */
 #como-funciona .about-img-col img {
@@ -21,9 +158,37 @@
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
-/* Hero - img04.png sobe um pouco no desktop */
-@media (min-width: 992px) {
+/* Hero mobile - mínimo padding-top (não grudar no header) */
+@media (max-width: 767.98px) {
+  .hero-section .hero-background .row {
+    padding-top: 0.5rem;
+  }
+  .hero-section .hero-headline {
+    margin-top: 0.25rem;
+  }
+}
+
+/* Hero desktop - espaço generoso e respiro para a ilustração */
+@media (min-width: 768px) {
+  .hero-section .hero-background {
+    align-items: flex-start;
+    padding-top: 8rem;
+    padding-bottom: 6rem;
+    padding-left: 1rem;
+    padding-right: 2rem;
+    min-height: 50rem;
+  }
   .hero-section .chat-image {
+    max-width: 85%;
+  }
+}
+@media (min-width: 992px) {
+  .hero-section .hero-background {
+    padding-left: 2rem;
+    padding-right: 3rem;
+  }
+  .hero-section .chat-image {
+    max-width: 75%;
     margin-top: -3rem;
   }
 }
@@ -60,6 +225,9 @@ footer .footer-bottom-bar {
 /* -------------------------------------------------------------------------- */
 [data-video-player-container] {
   cursor: pointer;
+}
+[data-video-player-container] video {
+  object-fit: cover;
 }
 [data-video-player-container] .play-button {
   display: none !important;

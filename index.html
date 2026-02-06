@@ -10,12 +10,10 @@
     <title>Ecommerce | Pixel12digital</title>
 
     <!-- ===============================================--><!--    Favicons--><!-- ===============================================-->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicons/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/img/favicons/icon-pixel.png">
+    <link rel="icon" type="image/png" href="assets/img/favicons/icon-pixel.png">
+    <link rel="shortcut icon" type="image/png" href="assets/img/favicons/icon-pixel.png">
     <link rel="manifest" href="assets/img/favicons/manifest.json">
-    <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png">
     <meta name="theme-color" content="#ffffff">
 
     <!-- ===============================================--><!--    Stylesheets--><!-- ===============================================-->
@@ -50,10 +48,12 @@
             <div class="hero-background">
               <div class="container">
                 <div class="row gy-4 gy-md-8 pt-9 pt-lg-0">
-                  <div class="col-lg-6 text-center text-lg-start">
-                    <h1 class="fs-2 fs-lg-1 text-white fw-bold mb-2 mb-lg-x1 lh-base mt-3 mt-lg-0"><span class="d-block d-md-none">Colocar a loja<br>no ar é fácil.</span><span class="d-none d-md-block">Colocar a loja<br>no ar é fácil.<br>Fazer funcionar<br>é outra história.</span></h1>
-                    <p class="fs-8 text-white mb-3 mb-lg-4 lh-lg">Hoje criar uma loja é quase instantâneo. Mas fazer isso virar operação, funcionar no dia a dia exige estrutura.</p>
-                    <div class="d-flex justify-content-center justify-content-lg-start"><a class="btn btn-primary btn-lg lh-xl mb-4 mb-md-5 mb-lg-7" href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20gostaria%20de%20conversar%20sobre%20a%20opera%C3%A7%C3%A3o%20da%20minha%20loja" target="_blank" rel="noopener">Falar no WhatsApp</a></div>
+                  <div class="col-lg-6 text-center text-lg-start hero-text-block">
+                    <h1 class="hero-headline text-white fw-bold lh-base mt-3 mt-lg-0">Colocar a loja no ar<br>é fácil.</h1>
+                    <p class="hero-subheadline text-white">O difícil é fazer funcionar no dia a dia.</p>
+                    <p class="hero-descricao text-white">Montamos com você a estrutura certa — do zero ao primeiro pedido.</p>
+                    <div class="d-flex hero-cta-wrapper justify-content-center justify-content-lg-start"><a class="btn btn-primary btn-lg lh-xl hero-cta" href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20gostaria%20de%20conversar%20sobre%20a%20opera%C3%A7%C3%A3o%20da%20minha%20loja" target="_blank" rel="noopener">Falar no WhatsApp</a></div>
+                    <p class="hero-microtexto text-white text-opacity-75">Projeto personalizado. Não é loja pronta.</p>
                   </div>
                   <div class="col-lg-6 position-lg-relative">
                     <div class="position-lg-absolute z-1 text-center"><img class="img-fluid chat-image" src="assets/img/Hero/img04.png" alt="" />
@@ -504,6 +504,18 @@
     <script src="vendors/swiper/swiper-bundle.min.js"></script>
     <script src="vendors/lodash/lodash.min.js"></script>
     <script src="assets/js/theme.js"></script>
+    <script>
+    (function() {
+      var collapse = document.getElementById('navbar-content');
+      var navbar = document.getElementById('navbar');
+      var navLinks = document.querySelector('[data-navbar-nav]');
+      if (collapse && navbar) {
+        collapse.addEventListener('show.bs.collapse', function() { navbar.classList.add('navbar-menu-opening'); });
+        collapse.addEventListener('hidden.bs.collapse', function() { navbar.classList.remove('navbar-menu-opening'); });
+        if (navLinks) navLinks.addEventListener('click', function() { navbar.classList.remove('navbar-menu-opening'); });
+      }
+    })();
+    </script>
     <script>
     (function() {
       var WHATSAPP_DESTINO = '5511999999999';

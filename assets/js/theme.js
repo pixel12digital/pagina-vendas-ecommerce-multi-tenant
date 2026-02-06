@@ -504,8 +504,11 @@ var videoControllerInit = function videoControllerInit() {
           }
         });
         videoPlayer.addEventListener('ended', function () {
-          videoPlayer.currentTime = 0;
+          videoPlayer.pause();
+          var src = videoPlayer.getAttribute('src');
+          videoPlayer.removeAttribute('src');
           videoPlayer.load();
+          videoPlayer.setAttribute('src', src);
           videoPaused();
         });
         var loadingEl = container.querySelector('[data-video-loading]');
