@@ -1,0 +1,61 @@
+/* -------------------------------------------------------------------------- */
+/* Navbar - logo imagem                                                        */
+/* -------------------------------------------------------------------------- */
+.navbar-brand .navbar-brand-img {
+  height: 1.75rem;
+  width: auto;
+  display: block;
+}
+@media (min-width: 768px) {
+  .navbar-brand .navbar-brand-img {
+    height: 2.75rem;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Section #about - layout ajuste fino (imagem + respiro)                      */
+/* -------------------------------------------------------------------------- */
+#about .about-img-col img {
+  max-width: 92%;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* Hero - img04.png sobe um pouco no desktop */
+@media (min-width: 992px) {
+  .hero-section .chat-image {
+    margin-top: -3rem;
+  }
+}
+
+/* Collaborator - fundo branco para áreas transparentes da imagem */
+#section-collaborator,
+#section-collaborator .row,
+#section-collaborator .collaborator-col {
+  background-color: #fff !important;
+}
+#section-collaborator .collaborator-col img {
+  background-color: transparent !important;
+}
+#section-collaborator .collaborator-col::before,
+#section-collaborator .collaborator-col::after,
+#section-collaborator::before,
+#section-collaborator::after {
+  display: none !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Footer - grid e alinhamento                                                 */
+/* -------------------------------------------------------------------------- */
+footer .footer-cta {
+  max-width: 28rem;
+  margin-left: auto;
+}
+footer .footer-bottom-bar {
+  width: 100%;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                brainwaveio Button                               */
+/* -------------------------------------------------------------------------- */
+/* prettier-ignore */
