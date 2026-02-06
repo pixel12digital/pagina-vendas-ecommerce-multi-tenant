@@ -13,9 +13,9 @@
 }
 
 /* -------------------------------------------------------------------------- */
-/* Section #about - layout ajuste fino (imagem + respiro)                      */
+/* Section #como-funciona - layout ajuste fino (imagem + respiro)               */
 /* -------------------------------------------------------------------------- */
-#about .about-img-col img {
+#como-funciona .about-img-col img {
   max-width: 92%;
   border-radius: 14px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
@@ -70,6 +70,26 @@ footer .footer-bottom-bar {
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
+}
+
+/* Overlays para ocultar botões/logo do YouTube (bloqueiam clique)              */
+.youtube-embed-overlay {
+  position: absolute;
+  background: #0f0f0f;
+  pointer-events: auto;
+  z-index: 10;
+}
+.youtube-embed-overlay-top {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+}
+.youtube-embed-overlay-bottom-right {
+  bottom: 0;
+  right: 0;
+  width: 120px;
+  height: 48px;
 }
 
 /* -------------------------------------------------------------------------- */
