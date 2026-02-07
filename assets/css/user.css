@@ -245,6 +245,48 @@ footer .footer-bottom-bar {
   z-index: 20;
 }
 
+/* -------------------------------------------------------------------------- */
+/* Video #service - mobile only (≤480px): full-width, 16:9, play evidente      */
+/* -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  /* Bloco headline + microcopy: visível só no mobile */
+  #service .video-mobile-context {
+    display: block !important;
+  }
+  /* Player full-width, padding lateral mínimo, 16:9, espaçamento */
+  #service .youtube-video-container {
+    width: calc(100% + 1rem);
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+    aspect-ratio: 16 / 9;
+  }
+  #service .youtube-video-container video {
+    object-fit: contain;
+  }
+  #service .youtube-video-container,
+  #service .youtube-video-container .rounded-4 {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  /* Play icon central, grande, área de toque confortável */
+  #service .video-mobile-play-hint {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    z-index: 15;
+    pointer-events: none;
+  }
+  #service .video-mobile-play-hint img {
+    width: 4rem;
+    height: 4rem;
+  }
+  #service .video-player-play .video-mobile-play-hint {
+    display: none !important;
+  }
+}
+
 /* Overlays para ocultar botões/logo do YouTube (bloqueiam clique)              */
 .youtube-embed-overlay {
   position: absolute;

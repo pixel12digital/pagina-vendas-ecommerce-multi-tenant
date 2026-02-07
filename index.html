@@ -172,9 +172,16 @@
             <div class="container">
               <div class="row justify-content-center">
                 <div class="col-12">
+                  <div class="video-mobile-context d-none text-center text-white mb-3">
+                    <h3 class="fs-6 fw-bold mb-1">Como a Pixel12 Digital trabalha na prática</h3>
+                    <p class="fs-9 text-white text-opacity-75 mb-0">Toque para assistir (vídeo rápido)</p>
+                  </div>
                   <div class="position-relative z-1 text-center mb-8 mb-lg-9 video-player-paused youtube-video-container" data-video-player-container="data-video-player-container">
                     <video class="w-100 h-100 rounded-4" src="assets/video/Tech_video.mp4" poster="assets/img/Hero/capa_video.webp" preload="none" playsinline data-video-player="data-video-player"></video>
                     <div class="overlay position-absolute top-0 bottom-0 start-0 end-0 rounded-4 bg-1100 object-cover" data-overlay="data-overlay"></div>
+                    <div class="video-mobile-play-hint position-absolute top-50 start-50 translate-middle d-none" aria-hidden="true" data-video-mobile-play-hint>
+                      <img src="assets/img/illustrations/play-solid.svg" alt="" width="64" height="64" />
+                    </div>
                     <div class="video-loading position-absolute top-50 start-50 translate-middle d-none" data-video-loading aria-hidden="true">
                       <div class="spinner-border text-light" role="status"><span class="visually-hidden">Carregando...</span></div>
                     </div>
