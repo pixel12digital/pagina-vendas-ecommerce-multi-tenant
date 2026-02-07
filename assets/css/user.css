@@ -246,86 +246,88 @@ footer .footer-bottom-bar {
 }
 
 /* -------------------------------------------------------------------------- */
-/* Video #service - mobile only (≤480px): full-width, 16:9, play evidente      */
+/* Video #service - mobile only (≤480px): bloco principal, play discreto      */
+/* Spec: padding 16px, 16:9, play 64px, contexto antes do vídeo                */
 /* -------------------------------------------------------------------------- */
 @media (max-width: 480px) {
-  /* Section: evitar que overflow-hidden corte o texto */
   #service {
-    overflow-x: visible;
+    overflow-x: hidden;
   }
-  /* Container e row: garantir que não estourem a viewport */
-  #service .container {
-    max-width: 100%;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  /* Bloco headline + microcopy: visível só no mobile, texto sem corte */
+  /* Parte 4: Headline + microcopy — visível só no mobile */
   #service .video-mobile-context {
     display: block !important;
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-    padding-left: 0;
-    padding-right: 0;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
   }
   #service .video-mobile-context h3 {
     font-size: 1.125rem !important;
     line-height: 1.35;
-    max-width: 100%;
-    overflow-wrap: break-word;
+    margin-bottom: 0.25rem;
   }
   #service .video-mobile-context p {
     font-size: 0.8125rem !important;
-    max-width: 100%;
-    overflow-wrap: break-word;
   }
-  /* Player full-width sem overflow, padding lateral mínimo, 16:9 */
+  /* Espaço acima do vídeo: 16–24px */
+  #service .video-mobile-context {
+    margin-bottom: 1rem;
+  }
+  /* Parte 2: Container do player — padding 16px cada lado, quase full width */
+  #service .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
   #service .youtube-video-container {
     width: 100%;
     max-width: 100%;
     margin-left: 0;
     margin-right: 0;
-    margin-top: 0.5rem;
-    margin-bottom: 1.5rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1.25rem;
+    padding: 0;
     aspect-ratio: 16 / 9;
+    border-radius: 14px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
   }
+  /* Video ocupa 100% do wrapper, 16:9 */
   #service .youtube-video-container video {
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: contain !important;
+    object-fit: contain;
     object-position: center center;
+    border-radius: 14px;
   }
-  #service .youtube-video-container,
-  #service .youtube-video-container .rounded-4 {
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  #service .youtube-video-container .overlay {
+    border-radius: 14px;
   }
-  /* Play icon central, grande, área de toque confortável */
+  /* Parte 3: Play overlay — 64px, central, NÃO cobrir o poster */
   #service .video-mobile-play-hint {
     display: flex !important;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 15;
     pointer-events: none;
   }
   #service .video-mobile-play-hint img {
-    width: 4rem;
-    height: 4rem;
+    width: 64px;
+    height: 64px;
+    max-width: 72px;
+    max-height: 72px;
   }
   #service .video-player-play .video-mobile-play-hint {
     display: none !important;
   }
-  /* Título e textos da seção sem corte horizontal */
+  /* Esconder qualquer play-icon/play-button do tema no mobile */
+  #service [data-video-player-container] .play-button,
+  #service [data-video-player-container] .play-icon {
+    display: none !important;
+  }
+  /* Título da seção */
   #service .col-md-8.col-lg-7 h2,
   #service .container h2 {
     font-size: 1.5rem !important;
-    padding-left: 0.25rem;
-    padding-right: 0.25rem;
     overflow-wrap: break-word;
   }
 }
