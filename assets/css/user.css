@@ -249,20 +249,35 @@ footer .footer-bottom-bar {
 /* Video #service - mobile only (≤480px): full-width, 16:9, play evidente      */
 /* -------------------------------------------------------------------------- */
 @media (max-width: 480px) {
-  /* Evitar overflow horizontal (barras de scroll) */
+  /* Section: evitar que overflow-hidden corte o texto */
   #service {
-    overflow-x: hidden;
+    overflow-x: visible;
+  }
+  /* Container e row: garantir que não estourem a viewport */
+  #service .container {
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
   /* Bloco headline + microcopy: visível só no mobile, texto sem corte */
   #service .video-mobile-context {
     display: block !important;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding-left: 0;
+    padding-right: 0;
     overflow-wrap: break-word;
     word-wrap: break-word;
   }
-  #service .video-mobile-context h3,
+  #service .video-mobile-context h3 {
+    font-size: 1.125rem !important;
+    line-height: 1.35;
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
   #service .video-mobile-context p {
+    font-size: 0.8125rem !important;
     max-width: 100%;
     overflow-wrap: break-word;
   }
@@ -308,8 +323,9 @@ footer .footer-bottom-bar {
   /* Título e textos da seção sem corte horizontal */
   #service .col-md-8.col-lg-7 h2,
   #service .container h2 {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    font-size: 1.5rem !important;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
     overflow-wrap: break-word;
   }
 }
