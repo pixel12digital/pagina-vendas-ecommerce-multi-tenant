@@ -32,7 +32,7 @@
     <main class="main" id="top">
       <div class="content">
         <nav class="navbar navbar-expand-md fixed-top" id="navbar" data-navbar-soft-on-scroll="data-navbar-soft-on-scroll">
-          <div class="container-fluid px-0"><a href="."><img class="navbar-brand w-75 d-md-none" src="assets/img/logos/logo.png" alt="Logo" /></a><a class="navbar-brand d-none d-md-block" href="."><img src="assets/img/logos/logo.png" alt="Logo" class="navbar-brand-img" /></a><a class="btn btn-primary btn-sm ms-md-x1 mt-lg-0 order-md-1 ms-auto" href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20gostaria%20de%20conversar%20sobre%20a%20opera%C3%A7%C3%A3o%20da%20minha%20loja" target="_blank" rel="noopener">Falar no WhatsApp</a><button class="navbar-toggler border-0 pe-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="container-fluid px-0"><a href="."><img class="navbar-brand w-75 d-md-none" src="assets/img/logos/logo.png" alt="Logo" /></a><a class="navbar-brand d-none d-md-block" href="."><img src="assets/img/logos/logo.png" alt="Logo" class="navbar-brand-img" /></a><a class="btn btn-primary btn-sm ms-md-x1 mt-lg-0 order-md-1 ms-auto" href="#contato">Falar no WhatsApp</a><button class="navbar-toggler border-0 pe-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse justify-content-md-end" id="navbar-content" data-navbar-collapse="data-navbar-collapse">
               <ul class="navbar-nav gap-md-2 gap-lg-3 pt-x1 pb-1 pt-md-0 pb-md-0" data-navbar-nav="data-navbar-nav">
                 <li class="nav-item"> <a class="nav-link lh-xl" href="#como-funciona">Como funciona</a></li>
@@ -52,7 +52,7 @@
                     <h1 class="hero-headline text-white fw-bold lh-base mt-3 mt-lg-0">Colocar a loja no ar<br>é fácil.</h1>
                     <p class="hero-subheadline text-white">O difícil é fazer funcionar no dia a dia.</p>
                     <p class="hero-descricao text-white">Montamos com você a estrutura certa — do zero ao primeiro pedido.</p>
-                    <div class="d-flex hero-cta-wrapper justify-content-center justify-content-lg-start"><a class="btn btn-primary btn-lg lh-xl hero-cta" href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20gostaria%20de%20conversar%20sobre%20a%20opera%C3%A7%C3%A3o%20da%20minha%20loja" target="_blank" rel="noopener">Falar no WhatsApp</a></div>
+                    <div class="d-flex hero-cta-wrapper justify-content-center justify-content-lg-start"><a class="btn btn-primary btn-lg lh-xl hero-cta" href="#contato">Falar no WhatsApp</a></div>
                     <p class="hero-microtexto text-white text-opacity-75">Projeto personalizado. Não é loja pronta.</p>
                   </div>
                   <div class="col-lg-6 position-lg-relative">
@@ -488,7 +488,7 @@
                 <p class="mb-0 lh-xl text-1100 fs-8">A maioria coloca no ar e só depois descobre entrega, troca, atendimento e bagunça de produtos. A gente monta isto com você do zero ao primeiro pedido.</p>
               </div>
               <div class="col-12 col-lg-3 order-2 order-lg-1">
-                <a class="btn btn-primary btn-lg lh-xl mb-1 text-nowrap d-inline-block" href="https://wa.me/SEU_NUMERO_AQUI?text=SEU_TEXTO_AQUI" target="_blank" rel="noopener">Falar no WhatsApp</a>
+                <a class="btn btn-primary btn-lg lh-xl mb-1 text-nowrap d-inline-block" href="#contato">Falar no WhatsApp</a>
                 <p class="mb-0 fs-10 text-1100 lh-xl">Implantação personalizada, passo a passo.</p>
               </div>
               <div class="col-lg-3 d-none d-lg-block order-lg-2"></div>
@@ -526,8 +526,7 @@
     </script>
     <script>
     (function() {
-      var WHATSAPP_DESTINO = '5511999999999';
-      var EMAIL_DESTINO = 'contato@exemplo.com';
+      var WHATSAPP_DESTINO = '5547997309525';
       var form = document.getElementById('form-whatsapp-lead');
       if (!form) return;
       form.addEventListener('submit', function(e) {
@@ -543,12 +542,7 @@
         }
         var waNum = whatsapp.replace(/\D/g, '');
         var msg = 'Olá! Sou ' + nome + '. Tenho uma loja de ' + segmento + ' e meu momento é: ' + momento + '.\nQuero estruturar pagamento, envio e vitrine pra operação funcionar no dia a dia.\nLoja/site (se tiver): ' + (link || '-') + '\nMeu WhatsApp: ' + whatsapp;
-        var mailBody = 'Novo lead - Implantação e-commerce\n\nNome: ' + nome + '\nWhatsApp: ' + whatsapp + '\nSegmento: ' + segmento + '\nMomento: ' + momento + '\nLink: ' + (link || '-') + '\n\n---\n' + msg;
-        var mailto = 'mailto:' + EMAIL_DESTINO + '?subject=' + encodeURIComponent('Novo lead - Implantação e-commerce') + '&body=' + encodeURIComponent(mailBody);
-        window.location.href = mailto;
-        setTimeout(function() {
-          window.open('https://wa.me/' + WHATSAPP_DESTINO + '?text=' + encodeURIComponent(msg), '_blank');
-        }, 300);
+        window.open('https://wa.me/' + WHATSAPP_DESTINO + '?text=' + encodeURIComponent(msg), '_blank');
       });
     })();
     </script>
