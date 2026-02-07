@@ -78,17 +78,17 @@
 /* -------------------------------------------------------------------------- */
 /* Mobile (360px referência) */
 .hero-text-block .hero-headline {
-  font-size: 1.75rem;
+  font-size: 2.5rem;
   margin-bottom: 0.5rem;
 }
 .hero-text-block .hero-subheadline {
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.4;
   margin-bottom: 0.75rem;
 }
 .hero-text-block .hero-descricao {
-  font-size: 0.9375rem;
+  font-size: 1rem;
   line-height: 1.5;
   margin-bottom: 1.25rem;
 }
@@ -101,11 +101,13 @@
   margin-bottom: 0;
 }
 
-/* Mobile: subheadline e bloco de texto alinhados à esquerda */
+/* Mobile: subheadline centralizado; demais textos à esquerda */
 @media (max-width: 767.98px) {
-  .hero-text-block,
-  .hero-text-block .hero-subheadline {
+  .hero-text-block {
     text-align: left;
+  }
+  .hero-text-block .hero-subheadline {
+    text-align: center;
   }
   .hero-text-block .hero-cta-wrapper {
     justify-content: flex-start;
@@ -221,7 +223,7 @@ footer .footer-bottom-bar {
 }
 
 /* -------------------------------------------------------------------------- */
-/* Video player - ocultar botão play, capa inteira clicável                    */
+/* Video player - capa inteira clicável, botão play visível                  */
 /* -------------------------------------------------------------------------- */
 [data-video-player-container] {
   cursor: pointer;
@@ -229,7 +231,17 @@ footer .footer-bottom-bar {
 [data-video-player-container] video {
   object-fit: cover;
 }
+/* Overlay não bloqueia clique nem o botão play */
+[data-video-player-container] .overlay {
+  pointer-events: none;
+}
+/* Botão play sempre acima do overlay, visível na capa */
 [data-video-player-container] .play-button {
+  z-index: 110;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
+}
+/* Ocultar botão play quando o vídeo está tocando (override d-flex !important) */
+[data-video-player-container].video-player-play .play-button {
   display: none !important;
 }
 

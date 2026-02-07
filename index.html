@@ -179,9 +179,10 @@
                   <div class="position-relative z-1 text-center mb-8 mb-lg-9 video-player-paused youtube-video-container" data-video-player-container="data-video-player-container">
                     <video class="w-100 h-100 rounded-4" src="assets/video/Tech_video.mp4" poster="assets/img/Hero/capa_video.webp" preload="none" playsinline data-video-player="data-video-player"></video>
                     <div class="overlay position-absolute top-0 bottom-0 start-0 end-0 rounded-4 bg-1100 object-cover" data-overlay="data-overlay"></div>
-                    <div class="video-mobile-play-hint position-absolute top-50 start-50 translate-middle d-none" aria-hidden="true" data-video-mobile-play-hint>
-                      <img src="assets/img/illustrations/play-solid.svg" alt="" width="64" height="64" />
-                    </div>
+                    <button class="play-button position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center rounded-circle bg-primary border-0" type="button" aria-label="Reproduzir vídeo">
+                      <span class="play-icon"><img src="assets/img/illustrations/play-solid.svg" alt="" width="24" height="24" /></span>
+                      <span class="pause-icon"><img src="assets/img/illustrations/pause-solid.svg" alt="" width="24" height="24" /></span>
+                    </button>
                     <div class="video-loading position-absolute top-50 start-50 translate-middle d-none" data-video-loading aria-hidden="true">
                       <div class="spinner-border text-light" role="status"><span class="visually-hidden">Carregando...</span></div>
                     </div>
