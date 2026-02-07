@@ -253,7 +253,7 @@ footer .footer-bottom-bar {
   #service .video-mobile-context {
     display: block !important;
   }
-  /* Player full-width, padding lateral mínimo, 16:9, espaçamento */
+  /* Player full-width, padding lateral mínimo, 16:9, poster inteiro visível */
   #service .youtube-video-container {
     width: calc(100% + 1rem);
     margin-left: -0.5rem;
@@ -263,7 +263,11 @@ footer .footer-bottom-bar {
     aspect-ratio: 16 / 9;
   }
   #service .youtube-video-container video {
-    object-fit: contain;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain !important;
+    object-position: center center;
   }
   #service .youtube-video-container,
   #service .youtube-video-container .rounded-4 {
