@@ -478,7 +478,7 @@
                           </select>
                         </div>
                         <div class="mb-2 w-100"><input class="form-control email-input" id="lead-link" type="url" placeholder="Link da loja (opcional)" /></div>
-                        <div class="d-grid"><button class="btn btn-lg btn-primary lh-xl mb-x1" type="submit">Chamar no WhatsApp</button></div>
+                        <div class="d-grid"><button class="btn btn-lg btn-primary lh-xl mb-x1" type="submit" id="btn-whatsapp-submit">Chamar no WhatsApp</button></div>
                       </form>
                     </div>
                     <div class="col-10 col-lg-7">
@@ -539,9 +539,12 @@
     (function() {
       var WHATSAPP_DESTINO = '5547997309525';
       var form = document.getElementById('form-whatsapp-lead');
+      var btn = document.getElementById('btn-whatsapp-submit');
       if (!form) return;
+      var alreadySent = false;
       form.addEventListener('submit', function(e) {
         e.preventDefault();
+        if (alreadySent) return;
         var nome = (document.getElementById('lead-nome') || {}).value || '';
         var whatsapp = (document.getElementById('lead-whatsapp') || {}).value || '';
         var segmento = (document.getElementById('lead-segmento') || {}).value || '';
@@ -551,7 +554,16 @@
           alert('Preencha Nome, WhatsApp, Segmento e Momento.');
           return;
         }
-        var waNum = whatsapp.replace(/\D/g, '');
+        alreadySent = true;
+        if (btn) { btn.disabled = true; btn.textContent = 'Enviando...'; }
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'whatsapp_lead_submit',
+          whatsapp_lead: {
+            segmento: segmento,
+            momento: momento
+          }
+        });
         var msg = 'Olá! Sou ' + nome + '. Tenho uma loja de ' + segmento + ' e meu momento é: ' + momento + '.\nQuero estruturar pagamento, envio e vitrine pra operação funcionar no dia a dia.\nLoja/site (se tiver): ' + (link || '-') + '\nMeu WhatsApp: ' + whatsapp;
         window.open('https://wa.me/' + WHATSAPP_DESTINO + '?text=' + encodeURIComponent(msg), '_blank');
       });
