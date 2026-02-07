@@ -246,15 +246,15 @@ footer .footer-bottom-bar {
 }
 
 /* -------------------------------------------------------------------------- */
-/* Video #service - mobile only (≤480px): bloco principal, play discreto      */
+/* Video #service - mobile only (≤768px): bloco principal, play discreto      */
 /* Spec: padding 16px, 16:9, play 64px, contexto antes do vídeo                */
 /* -------------------------------------------------------------------------- */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   #service {
     overflow-x: hidden;
   }
-  /* Parte 4: Headline + microcopy — visível só no mobile */
-  #service .video-mobile-context {
+  /* Parte 4: Headline + microcopy — visível só no mobile (override d-none) */
+  #service .video-mobile-context.d-none {
     display: block !important;
   }
   #service .video-mobile-context h3 {
@@ -298,8 +298,8 @@ footer .footer-bottom-bar {
   #service .youtube-video-container .overlay {
     border-radius: 14px;
   }
-  /* Parte 3: Play overlay — 64px, central, NÃO cobrir o poster */
-  #service .video-mobile-play-hint {
+  /* Parte 3: Play overlay — 64px, central (override d-none) */
+  #service .video-mobile-play-hint.d-none {
     display: flex !important;
     align-items: center;
     justify-content: center;
