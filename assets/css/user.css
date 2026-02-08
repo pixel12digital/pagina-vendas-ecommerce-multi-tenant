@@ -235,10 +235,16 @@ footer .footer-bottom-bar {
 [data-video-player-container] .overlay {
   pointer-events: none;
 }
-/* Botão play sempre acima do overlay, visível na capa */
+/* Botão play sempre acima do overlay, visível na capa: círculo vermelho (#F74D4D), triângulo branco */
 [data-video-player-container] .play-button {
   z-index: 110;
+  width: 64px;
+  height: 64px;
+  background-color: var(--brainwaveio-primary) !important;
   box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
+}
+[data-video-player-container] .play-icon img {
+  filter: brightness(0) invert(1);
 }
 /* Ocultar botão play quando o vídeo está tocando (override d-flex !important) */
 [data-video-player-container].video-player-play .play-button {
@@ -331,10 +337,11 @@ footer .footer-bottom-bar {
   #service .video-player-play .video-mobile-play-hint {
     display: none !important;
   }
-  /* Esconder qualquer play-icon/play-button do tema no mobile */
-  #service [data-video-player-container] .play-button,
-  #service [data-video-player-container] .play-icon {
-    display: none !important;
+  /* Botão play visível no mobile: círculo vermelho do projeto (#F74D4D), triângulo branco */
+  #service [data-video-player-container] .play-button {
+    width: 64px;
+    height: 64px;
+    background-color: var(--brainwaveio-primary) !important;
   }
   /* Título da seção */
   #service .col-md-8.col-lg-7 h2,

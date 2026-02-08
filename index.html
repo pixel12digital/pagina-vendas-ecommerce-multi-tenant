@@ -477,7 +477,7 @@
                             <option value="Vendo e quero escalar">Vendo e quero escalar</option>
                           </select>
                         </div>
-                        <div class="mb-2 w-100"><input class="form-control email-input" id="lead-link" type="url" placeholder="Link da loja (opcional)" /></div>
+                        <div class="mb-2 w-100"><input class="form-control email-input" id="lead-link" type="text" placeholder="Link da loja (opcional)" /></div>
                         <div class="d-grid"><button class="btn btn-lg btn-primary lh-xl mb-x1" type="submit" id="btn-whatsapp-submit">Chamar no WhatsApp</button></div>
                       </form>
                     </div>
@@ -566,6 +566,7 @@
         });
         var msg = 'Olá! Sou ' + nome + '. Tenho uma loja de ' + segmento + ' e meu momento é: ' + momento + '.\nQuero estruturar pagamento, envio e vitrine pra operação funcionar no dia a dia.\nLoja/site (se tiver): ' + (link || '-') + '\nMeu WhatsApp: ' + whatsapp;
         window.open('https://wa.me/' + WHATSAPP_DESTINO + '?text=' + encodeURIComponent(msg), '_blank');
+        if (btn) { btn.disabled = false; btn.textContent = 'Chamar no WhatsApp'; }
       });
     })();
     </script>
