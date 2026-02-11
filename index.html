@@ -43,7 +43,7 @@
     <main class="main" id="top">
       <div class="content">
         <nav class="navbar navbar-expand-md fixed-top" id="navbar" data-navbar-soft-on-scroll="data-navbar-soft-on-scroll">
-          <div class="container-fluid px-0"><a href="."><img class="navbar-brand w-75 d-md-none" src="assets/img/logos/logo.png" alt="Logo" /></a><a class="navbar-brand d-none d-md-block" href="."><img src="assets/img/logos/logo.png" alt="Logo" class="navbar-brand-img" /></a><a class="btn btn-primary btn-sm ms-md-x1 mt-lg-0 order-md-1 ms-auto" href="#contato">Falar no WhatsApp</a><button class="navbar-toggler border-0 pe-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="container-fluid px-0"><a href="."><img class="navbar-brand w-75 d-md-none" src="assets/img/logos/logo.png" alt="Logo" /></a><a class="navbar-brand d-none d-md-block" href="."><img src="assets/img/logos/logo.png" alt="Logo" class="navbar-brand-img" /></a><a class="btn btn-primary btn-sm ms-md-x1 mt-lg-0 order-md-1 ms-auto" href="https://wa.me/5547997309525" target="_blank" rel="noopener">Orçamento no WhatsApp</a><button class="navbar-toggler border-0 pe-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse justify-content-md-end" id="navbar-content" data-navbar-collapse="data-navbar-collapse">
               <ul class="navbar-nav gap-md-2 gap-lg-3 pt-x1 pb-1 pt-md-0 pb-md-0" data-navbar-nav="data-navbar-nav">
                 <li class="nav-item"> <a class="nav-link lh-xl" href="#como-funciona">Como funciona</a></li>
@@ -63,8 +63,13 @@
                     <h1 class="hero-headline text-white fw-bold lh-base mt-3 mt-lg-0">Colocar a loja no ar<br>é fácil.</h1>
                     <p class="hero-subheadline text-white">O difícil é fazer funcionar no dia a dia.</p>
                     <p class="hero-descricao text-white">Montamos com você a estrutura certa — do zero ao primeiro pedido.</p>
-                    <div class="d-flex hero-cta-wrapper justify-content-center justify-content-lg-start"><a class="btn btn-primary btn-lg lh-xl hero-cta" href="#contato">Falar no WhatsApp</a></div>
+                    <div class="d-flex hero-cta-wrapper justify-content-center justify-content-lg-start"><a class="btn btn-primary btn-lg lh-xl hero-cta" href="#contato">Simular em 30 segundos</a></div>
                     <p class="hero-microtexto text-white text-opacity-75">Projeto personalizado. Não é loja pronta.</p>
+                    <ul class="list-unstyled hero-bullets text-white mt-2 mb-0">
+                      <li class="lh-xl"><span class="text-success me-1">&#10004;</span> Pagamento e checkout configurados</li>
+                      <li class="lh-xl"><span class="text-success me-1">&#10004;</span> Envio e frete integrados</li>
+                      <li class="lh-xl"><span class="text-success me-1">&#10004;</span> Catálogo e vitrine organizados</li>
+                    </ul>
                   </div>
                   <div class="col-lg-6 position-lg-relative">
                     <div class="position-lg-absolute z-1 text-center"><img class="img-fluid chat-image" src="assets/img/Hero/img04.png" alt="" />
@@ -432,7 +437,6 @@
                         <div class="accordion-body lh-xl pt-0 pb-x1">Quando entra em produção, o foco é validar o fluxo real de compra e corrigir o que trava conversão e entrega.</div>
                       </div>
                     </div>
-’</div>
                     <div class="accordion-item">
                       <h2 class="accordion-header" id="heading5"><button class="accordion-button fs-8 lh-lg fw-bold pt-x1 pb-2 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expand="false" aria-controls="collapse5" data-accordion-button="data-accordion-button">Qual a diferença entre Implantação e Assistida?</button></h2>
                       <div class="accordion-collapse collapse" id="collapse5" data-bs-parent="#accordion">
@@ -456,7 +460,6 @@
                     <div class="col-10 col-lg-7">
                       <form id="form-whatsapp-lead" method="POST" onsubmit="return false;">
                         <div class="mb-2 w-100"><input class="form-control email-input" id="lead-nome" type="text" placeholder="Nome" required="required" /></div>
-                        <div class="mb-2 w-100"><input class="form-control email-input" id="lead-whatsapp" type="tel" placeholder="WhatsApp" required="required" /></div>
                         <div class="mb-2 w-100">
                           <select class="form-control email-input" id="lead-segmento" required="required">
                             <option value="">Segmento</option>
@@ -478,7 +481,7 @@
                           </select>
                         </div>
                         <div class="mb-2 w-100"><input class="form-control email-input" id="lead-link" type="text" placeholder="Link da loja (opcional)" /></div>
-                        <div class="d-grid"><button class="btn btn-lg btn-primary lh-xl mb-x1" type="submit" id="btn-whatsapp-submit">Chamar no WhatsApp</button></div>
+                        <div class="d-grid"><button class="btn btn-lg btn-primary lh-xl mb-x1" type="submit" id="btn-whatsapp-submit">Fazer simulação</button></div>
                       </form>
                     </div>
                     <div class="col-10 col-lg-7">
@@ -546,12 +549,11 @@
         e.preventDefault();
         if (alreadySent) return;
         var nome = (document.getElementById('lead-nome') || {}).value || '';
-        var whatsapp = (document.getElementById('lead-whatsapp') || {}).value || '';
         var segmento = (document.getElementById('lead-segmento') || {}).value || '';
         var momento = (document.getElementById('lead-momento') || {}).value || '';
         var link = (document.getElementById('lead-link') || {}).value || '';
-        if (!nome.trim() || !whatsapp.trim() || !segmento || !momento) {
-          alert('Preencha Nome, WhatsApp, Segmento e Momento.');
+        if (!nome.trim() || !segmento || !momento) {
+          alert('Preencha Nome, Segmento e Momento.');
           return;
         }
         alreadySent = true;
@@ -564,9 +566,9 @@
             momento: momento
           }
         });
-        var msg = 'Olá! Sou ' + nome + '. Tenho uma loja de ' + segmento + ' e meu momento é: ' + momento + '.\nQuero estruturar pagamento, envio e vitrine pra operação funcionar no dia a dia.\nLoja/site (se tiver): ' + (link || '-') + '\nMeu WhatsApp: ' + whatsapp;
+        var msg = 'Olá! Sou ' + nome + '. Tenho uma loja de ' + segmento + ' e meu momento é: ' + momento + '.\nQuero estruturar pagamento, envio e vitrine pra operação funcionar no dia a dia.\nLoja/site (se tiver): ' + (link || '-');
         window.open('https://wa.me/' + WHATSAPP_DESTINO + '?text=' + encodeURIComponent(msg), '_blank');
-        if (btn) { btn.disabled = false; btn.textContent = 'Chamar no WhatsApp'; }
+        if (btn) { btn.disabled = false; btn.textContent = 'Fazer simulação'; }
       });
     })();
     </script>
