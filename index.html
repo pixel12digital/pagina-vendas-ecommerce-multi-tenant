@@ -351,27 +351,27 @@
                 <div class="col-12">
                   <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3">
                     <div class="p-x1 text-center price-card-1 bg-transparent border mb-3 mb-md-0 rounded-2 pricing-card">
-                      <p class="fs-10 text-uppercase mb-3 fw-bold text-primary ls-2"> Implantação</p>
-                      <h2 class="mb-3"><span class="fs-6 fs-md-7 fw-bold">R$ </span><span class="fs-2 fs-md-1 fw-bold">1.900</span><span class="fs-9 lh-xl font-sans-serif">/projeto</span></h2>
-                      <p class="fs-9 lh-xl text-1100 mb-3">Valor a partir de. Ajusta conforme catálogo e integrações.</p>
+                      <p class="fs-10 text-uppercase mb-3 fw-bold text-primary ls-2"> Plano Start</p>
+                      <h2 class="mb-3"><span class="fs-6 fs-md-7 fw-bold">R$ </span><span class="fs-2 fs-md-1 fw-bold">79,90</span><span class="fs-9 lh-xl font-sans-serif"> / mês</span></h2>
+                      <p class="fs-9 lh-xl text-1100 mb-3">Implantação inicial: R$ 297 + R$ 79,90/mês (apoio e ajustes)</p>
                       <ul class="list-unstyled fs-8 lh-xl fw-light text-1100 ls-1">
                         <li class="py-x1 px-1 border-top"> Checkout e pagamento configurados </li>
                         <li class="py-x1 px-1 border-top"> Envio e regras definidos </li>
                         <li class="py-x1 px-1 border-top"> Catálogo e vitrine organizados </li>
                         <li class="py-x1 px-1 border-top"> Fluxo de pedidos validado </li>
-                        <li class="mt-1 d-grid"> <button class="btn btn-secondary btn-lg lh-xl">Quero Implantar</button></li>
+                        <li class="mt-1 d-grid"> <button class="btn btn-secondary btn-lg lh-xl" onclick="window.location.hash='#contato?origem=start'; document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">Quero Implantar</button></li>
                       </ul>
                     </div>
                     <div class="p-x1 text-center bg-white border shadow-sm rounded-2 pricing-card">
-                      <p class="fs-10 text-uppercase mb-3 fw-bold text-primary ls-2"> Assistida</p>
-                      <h2 class="mb-3"><span class="fs-6 fs-md-7 fw-bold">R$ </span><span class="fs-2 fs-md-1 fw-bold">99</span><span class="fs-9 lh-xl font-sans-serif">/mês</span></h2>
-                      <p class="fs-9 lh-xl text-1100 mb-3">Implantação inicial: R$ 1.900 + R$ 99/mês (apoio e ajustes).</p>
+                      <p class="fs-10 text-uppercase mb-3 fw-bold text-primary ls-2"> Projeto Estruturado</p>
+                      <h2 class="mb-3"><span class="price-consulta">Sob consulta</span></h2>
+                      <p class="fs-9 lh-xl text-1100 mb-3">Para operações com integrações e estrutura avançada.</p>
                       <ul class="list-unstyled fs-8 lh-xl fw-light text-1100 ls-1">
-                        <li class="py-x1 px-1 border-top"> Tudo da Implantação </li>
-                        <li class="py-x1 px-1 border-top"> Servidor Otimizado </li>
-                        <li class="py-x1 px-1 border-top"> Suporte Prioritário </li>
-                        <li class="py-x1 px-1 border-top"> Monitoramento Ativo </li>
-                        <li class="mt-1 d-grid"> <button class="btn btn-primary btn-lg lh-xl">Quero Apoio</button></li>
+                        <li class="py-x1 px-1 border-top"> Integração ERP </li>
+                        <li class="py-x1 px-1 border-top"> Fiscal e estoque </li>
+                        <li class="py-x1 px-1 border-top"> CRM e automações </li>
+                        <li class="py-x1 px-1 border-top"> Marketplace e logística </li>
+                        <li class="mt-1 d-grid"> <button class="btn btn-primary btn-lg lh-xl" onclick="window.location.hash='#contato?origem=projeto'; document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">Falar com um especialista</button></li>
                       </ul>
                     </div>
                   </div>
@@ -453,7 +453,7 @@
                 <div class="col-md-8 col-lg-8">
                   <div class="row justify-content-center">
                     <div class="col-12 col-lg-10">
-                      <h2 class="fs-4 fs-lg-3 fw-bold text-center mb-2 lh-sm">Fale com a gente</h2>
+                      <h2 id="form-titulo" class="fs-4 fs-lg-3 fw-bold text-center mb-2 lh-sm">Simule sua loja em 30 segundos</h2>
                       <p class="fs-8 mb-5 mb-lg-6 text-center lh-lg fw-normal">Conte o básico e te chamamos no WhatsApp.</p>
                     </div>
                     <div class="col-10 col-lg-7">
@@ -480,7 +480,7 @@
                           </select>
                         </div>
                         <div class="mb-2 w-100"><input class="form-control email-input" id="lead-link" type="text" placeholder="Link da loja (opcional)" /></div>
-                        <div class="d-grid"><button class="btn btn-lg btn-primary lh-xl mb-x1" type="submit" id="btn-whatsapp-submit">Fazer simulação</button></div>
+                        <div class="d-grid"><button id="btn-whatsapp-submit" class="btn btn-lg btn-primary lh-xl mb-x1" type="submit">Fazer simulação</button></div>
                       </form>
                     </div>
                     <div class="col-10 col-lg-7">
@@ -501,7 +501,7 @@
                 <p class="mb-0 lh-xl text-1100 fs-8">A maioria coloca no ar e só depois descobre entrega, troca, atendimento e bagunça de produtos. A gente monta isto com você do zero ao primeiro pedido.</p>
               </div>
               <div class="col-12 col-lg-3 order-2 order-lg-1">
-                <a class="btn btn-primary btn-lg lh-xl mb-1 text-nowrap d-inline-block" href="#contato">Falar no WhatsApp</a>
+                <a class="btn btn-primary btn-lg lh-xl mb-1 text-nowrap d-inline-block" href="#" onclick="event.preventDefault(); window.dataLayer = window.dataLayer || []; window.dataLayer.push({event: 'whatsapp_footer_click'}); window.open('https://wa.me/5547997309525?text=Ol%C3%A1%2C%20visitei%20o%20site%20da%20Pixel12%20Digital%2C%20vi%20os%20planos%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20antes%20de%20decidir.', '_blank');">Falar no WhatsApp</a>
                 <p class="mb-0 fs-10 text-1100 lh-xl">Implantação personalizada, passo a passo.</p>
               </div>
               <div class="col-lg-3 d-none d-lg-block order-lg-2"></div>
@@ -539,6 +539,42 @@
     </script>
     <script>
     (function() {
+      // Detectar origem do formulário
+      function checkFormOrigin() {
+        var urlParams = new URLSearchParams(window.location.hash.split('?')[1] || '');
+        var origem = urlParams.get('origem');
+        var formTitulo = document.getElementById('form-titulo');
+        var formBtn = document.getElementById('btn-whatsapp-submit');
+        var formSubtitulo = formTitulo ? formTitulo.nextElementSibling : null;
+        
+        if (origem === 'projeto' && formTitulo && formBtn) {
+          formTitulo.textContent = 'Fale sobre seu projeto';
+          formBtn.textContent = 'Enviar para análise';
+          if (formSubtitulo) {
+            formSubtitulo.textContent = 'Conte o básico e te chamamos no WhatsApp.';
+          }
+        } else if (origem === 'start' && formTitulo && formBtn) {
+          formTitulo.textContent = 'Iniciar minha loja – Plano Start';
+          formBtn.textContent = 'Enviar para implantação';
+          if (formSubtitulo) {
+            formSubtitulo.textContent = 'Envie seus dados para iniciarmos a implantação da sua loja.';
+          }
+        } else {
+          // Padrão
+          formTitulo.textContent = 'Simule sua loja em 30 segundos';
+          formBtn.textContent = 'Fazer simulação';
+          if (formSubtitulo) {
+            formSubtitulo.textContent = 'Conte o básico e te chamamos no WhatsApp.';
+          }
+        }
+      }
+      
+      // Verificar no carregamento
+      checkFormOrigin();
+      
+      // Verificar quando hash mudar (clique no botão)
+      window.addEventListener('hashchange', checkFormOrigin);
+      
       var WHATSAPP_DESTINO = '5547997309525';
       var form = document.getElementById('form-whatsapp-lead');
       var btn = document.getElementById('btn-whatsapp-submit');
@@ -565,9 +601,32 @@
             momento: momento
           }
         });
-        var msg = 'Olá! Sou ' + nome + '. Tenho uma loja de ' + segmento + ' e meu momento é: ' + momento + '.\nQuero estruturar pagamento, envio e vitrine pra operação funcionar no dia a dia.\nLoja/site (se tiver): ' + (link || '-');
+        // Verificar se é modo Projeto Estruturado ou Start
+        var formTitulo = document.getElementById('form-titulo');
+        var isProjeto = formTitulo && formTitulo.textContent.includes('Fale sobre seu projeto');
+        var isStart = formTitulo && formTitulo.textContent.includes('Iniciar minha loja');
+        
+        var msg;
+        if (isProjeto) {
+          // Mensagem para Projeto Estruturado
+          msg = 'Olá, vim do site e quero uma análise para Projeto Estruturado (integrações avançadas).\n\nNome: ' + nome + '\nSegmento: ' + segmento + '\nMomento: ' + momento + '\nLink: ' + (link || '-');
+        } else if (isStart) {
+          // Mensagem para Plano Start
+          msg = 'Olá, vim do site e quero iniciar o Plano Start (R$ 79,90/mês + implantação inicial).\n\nNome: ' + nome + '\nSegmento: ' + segmento + '\nMomento: ' + momento + '\nLink: ' + (link || '-');
+        } else {
+          // Mensagem padrão de Simulação
+          msg = 'Olá! Sou ' + nome + '. Tenho uma loja de ' + segmento + ' e meu momento é: ' + momento + '.\nQuero estruturar pagamento, envio e vitrine pra operação funcionar no dia a dia.\nLoja/site (se tiver): ' + (link || '-');
+        }
         window.open('https://wa.me/' + WHATSAPP_DESTINO + '?text=' + encodeURIComponent(msg), '_blank');
-        if (btn) { btn.disabled = false; btn.textContent = 'Fazer simulação'; }
+        if (btn) { btn.disabled = false; 
+          if (isProjeto) {
+            btn.textContent = 'Enviar para análise';
+          } else if (isStart) {
+            btn.textContent = 'Enviar para implantação';
+          } else {
+            btn.textContent = 'Fazer simulação';
+          }
+        }
       });
     })();
     </script>
