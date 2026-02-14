@@ -42,7 +42,7 @@
     <main class="main" id="top">
       <div class="content">
         <nav class="navbar navbar-expand-md fixed-top" id="navbar" data-navbar-soft-on-scroll="data-navbar-soft-on-scroll">
-          <div class="container-fluid px-0"><a href="."><img class="navbar-brand w-75 d-md-none" src="assets/img/logos/logo.png" alt="Logo" /></a><a class="navbar-brand d-none d-md-block" href="."><img src="assets/img/logos/logo.png" alt="Logo" class="navbar-brand-img" /></a><a class="btn btn-primary btn-sm ms-md-x1 mt-lg-0 order-md-1 ms-auto" href="https://wa.me/5547997309525?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Pixel12%20Digital.%0AQuero%20um%20or%C3%A7amento%20para%20loja%20virtual." target="_blank" rel="noopener">Orçamento no WhatsApp</a><button class="navbar-toggler border-0 pe-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="container-fluid px-0"><a href="."><img class="navbar-brand w-75 d-md-none" src="assets/img/logos/logo.png" alt="Logo" /></a><a class="navbar-brand d-none d-md-block" href="."><img src="assets/img/logos/logo.png" alt="Logo" class="navbar-brand-img" /></a><a class="btn btn-primary btn-sm ms-md-x1 mt-lg-0 order-md-1 ms-auto" href="#" onclick="event.preventDefault(); window.dataLayer = window.dataLayer || []; window.dataLayer.push({event: 'whatsapp_header_click', ref: 'ECOM-HDR'}); window.open('https://wa.me/5547997309525?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Pixel12%20Digital.%0AQuero%20um%20or%C3%A7amento%20para%20loja%20virtual.%0A%0ARef:%20ECOM-HDR', '_blank');" target="_blank" rel="noopener">Orçamento no WhatsApp</a><button class="navbar-toggler border-0 pe-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse justify-content-md-end" id="navbar-content" data-navbar-collapse="data-navbar-collapse">
               <ul class="navbar-nav gap-md-2 gap-lg-3 pt-x1 pb-1 pt-md-0 pb-md-0" data-navbar-nav="data-navbar-nav">
                 <li class="nav-item"> <a class="nav-link lh-xl" href="#como-funciona">Como funciona</a></li>
@@ -501,7 +501,7 @@
                 <p class="mb-0 lh-xl text-1100 fs-8">A maioria coloca no ar e só depois descobre entrega, troca, atendimento e bagunça de produtos. A gente monta isto com você do zero ao primeiro pedido.</p>
               </div>
               <div class="col-12 col-lg-3 order-2 order-lg-1">
-                <a class="btn btn-primary btn-lg lh-xl mb-1 text-nowrap d-inline-block" href="#" onclick="event.preventDefault(); window.dataLayer = window.dataLayer || []; window.dataLayer.push({event: 'whatsapp_footer_click'}); window.open('https://wa.me/5547997309525?text=Ol%C3%A1%2C%20visitei%20o%20site%20da%20Pixel12%20Digital%2C%20vi%20os%20planos%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20antes%20de%20decidir.', '_blank');">Falar no WhatsApp</a>
+                <a class="btn btn-primary btn-lg lh-xl mb-1 text-nowrap d-inline-block" href="#" onclick="event.preventDefault(); window.dataLayer = window.dataLayer || []; window.dataLayer.push({event: 'whatsapp_footer_click', ref: 'ECOM-FTR'}); window.open('https://wa.me/5547997309525?text=Ol%C3%A1%2C%20visitei%20o%20site%20da%20Pixel12%20Digital%2C%20vi%20os%20planos%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20antes%20de%20decidir.%0A%0ARef:%20ECOM-FTR', '_blank');">Falar no WhatsApp</a>
                 <p class="mb-0 fs-10 text-1100 lh-xl">Implantação personalizada, passo a passo.</p>
               </div>
               <div class="col-lg-3 d-none d-lg-block order-lg-2"></div>
@@ -594,13 +594,16 @@
         alreadySent = true;
         if (btn) { btn.disabled = true; btn.textContent = 'Enviando...'; }
         window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
+        var eventData = {
           event: 'whatsapp_lead_submit',
+          ref: isProjeto ? 'ECOM-FORM-PROJ' : isStart ? 'ECOM-FORM-START' : 'ECOM-FORM-SIM',
+          form_state: isProjeto ? 'projeto' : isStart ? 'start' : 'simulacao',
           whatsapp_lead: {
             segmento: segmento,
             momento: momento
           }
-        });
+        };
+        window.dataLayer.push(eventData);
         // Verificar se é modo Projeto Estruturado ou Start
         var formTitulo = document.getElementById('form-titulo');
         var isProjeto = formTitulo && formTitulo.textContent.includes('Fale sobre seu projeto');
@@ -609,13 +612,13 @@
         var msg;
         if (isProjeto) {
           // Mensagem para Projeto Estruturado
-          msg = 'Olá, vim do site e quero uma análise para Projeto Estruturado (integrações avançadas).\n\nNome: ' + nome + '\nSegmento: ' + segmento + '\nMomento: ' + momento + '\nLink: ' + (link || '-');
+          msg = 'Olá, vim do site e quero uma análise para Projeto Estruturado (integrações avançadas).\n\nNome: ' + nome + '\nSegmento: ' + segmento + '\nMomento: ' + momento + '\nLink: ' + (link || '-') + '\n\nRef: ECOM-FORM-PROJ';
         } else if (isStart) {
           // Mensagem para Plano Start
-          msg = 'Olá, vim do site e quero iniciar o Plano Start (R$ 79,90/mês + implantação inicial).\n\nNome: ' + nome + '\nSegmento: ' + segmento + '\nMomento: ' + momento + '\nLink: ' + (link || '-');
+          msg = 'Olá, vim do site e quero iniciar o Plano Start (R$ 79,90/mês + implantação inicial).\n\nNome: ' + nome + '\nSegmento: ' + segmento + '\nMomento: ' + momento + '\nLink: ' + (link || '-') + '\n\nRef: ECOM-FORM-START';
         } else {
           // Mensagem padrão de Simulação
-          msg = 'Olá! Sou ' + nome + '. Tenho uma loja de ' + segmento + ' e meu momento é: ' + momento + '.\nQuero estruturar pagamento, envio e vitrine pra operação funcionar no dia a dia.\nLoja/site (se tiver): ' + (link || '-');
+          msg = 'Olá! Sou ' + nome + '. Tenho uma loja de ' + segmento + ' e meu momento é: ' + momento + '.\nQuero estruturar pagamento, envio e vitrine pra operação funcionar no dia a dia.\nLoja/site (se tiver): ' + (link || '-') + '\n\nRef: ECOM-FORM-SIM';
         }
         window.open('https://wa.me/' + WHATSAPP_DESTINO + '?text=' + encodeURIComponent(msg), '_blank');
         if (btn) { btn.disabled = false; 
