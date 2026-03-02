@@ -270,27 +270,36 @@ footer .footer-bottom-bar {
 @media (max-width: 768px) {
   #service {
     overflow-x: hidden;
+    padding-top: 3rem !important;
+    padding-bottom: 1rem !important;
   }
-  /* Parte 4: Headline + microcopy — visível só no mobile (override d-none) */
-  #service .video-mobile-context.d-none {
-    display: block !important;
+  /* Título e subtítulo principais - visíveis no mobile */
+  #service .col-md-8.col-lg-7 {
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
-  #service .video-mobile-context h3 {
-    font-size: 1.125rem !important;
-    line-height: 1.35;
-    margin-bottom: 0.25rem;
+  #service .col-md-8.col-lg-7 h2 {
+    font-size: 1.5rem !important;
+    line-height: 1.3;
+    margin-bottom: 0.75rem !important;
+    padding-bottom: 0.5rem;
   }
-  #service .video-mobile-context p {
-    font-size: 0.8125rem !important;
+  #service .col-md-8.col-lg-7 p {
+    font-size: 1rem !important;
+    margin-bottom: 1rem !important;
   }
-  /* Espaço acima do vídeo: 16–24px */
+  /* Parte 4: Headline + microcopy — OCULTAR no mobile (já temos o título principal) */
   #service .video-mobile-context {
-    margin-bottom: 1rem;
+    display: none !important;
   }
   /* Parte 2: Container do player — padding 16px cada lado, quase full width */
   #service .container {
     padding-left: 16px;
     padding-right: 16px;
+  }
+  #service .row {
+    margin-top: 0;
   }
   #service .youtube-video-container {
     width: 100%;
