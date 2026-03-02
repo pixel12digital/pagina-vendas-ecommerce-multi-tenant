@@ -568,7 +568,7 @@
         window.dataLayer = window.dataLayer || [];
         var eventData = {
           event: 'whatsapp_lead_submit',
-          ref: isProjeto ? 'ECOM-FORM-PROJ' : isStart ? 'ECOM-FORM-START' : 'ECOM-LP-CONSULT',
+          ref: 'ECOM-LP-CONSULT',
           form_state: isProjeto ? 'projeto' : isStart ? 'start' : 'simulacao',
           whatsapp_lead: {
             segmento: segmento,
@@ -584,10 +584,10 @@
         var msg;
         if (isProjeto) {
           // Mensagem para Projeto Estruturado
-          msg = 'Olá, vim do site e quero uma análise para Projeto Estruturado (integrações avançadas).\n\nNome: ' + nome + '\nSegmento: ' + segmento + '\nMomento: ' + momento + '\nLink: ' + (link || '-') + '\n\nRef: ECOM-FORM-PROJ';
+          msg = 'Olá, vim do site e quero uma análise para Projeto Estruturado (integrações avançadas).\n\nNome: ' + nome + '\nSegmento: ' + segmento + '\nMomento: ' + momento + '\nLink: ' + (link || '-') + '\n\nRef: ECOM-LP-CONSULT';
         } else if (isStart) {
           // Mensagem para Plano Start
-          msg = 'Olá, vim do site e quero iniciar o Plano Start (12 x R$ 97 no cartão).\n\nNome: ' + nome + '\nSegmento: ' + segmento + '\nMomento: ' + momento + '\nLink: ' + (link || '-') + '\n\nRef: ECOM-FORM-START';
+          msg = 'Olá, vim do site e quero iniciar o Plano Start (12 x R$ 97 no cartão).\n\nNome: ' + nome + '\nSegmento: ' + segmento + '\nMomento: ' + momento + '\nLink: ' + (link || '-') + '\n\nRef: ECOM-LP-CONSULT';
         } else {
           // Mensagem padrão de Simulação
           msg = 'Olá! Sou ' + nome + '. Tenho uma loja de ' + segmento + ' e meu momento é: ' + momento + '.\nQuero estruturar pagamento, envio e vitrine pra operação funcionar no dia a dia.\nLoja/site (se tiver): ' + (link || '-') + '\n\nRef: ECOM-LP-CONSULT';
