@@ -267,10 +267,17 @@ footer .footer-bottom-bar {
 /* Video #service - mobile only (≤768px): bloco principal, play discreto      */
 /* Spec: padding 16px, 16:9, play 64px, contexto antes do vídeo                */
 /* -------------------------------------------------------------------------- */
+/* Desktop - padding-top adequado para respirar */
+@media (min-width: 769px) {
+  #service {
+    padding-top: 4rem !important;
+  }
+}
+
 @media (max-width: 768px) {
   #service {
     overflow-x: hidden;
-    padding-top: 3rem !important;
+    padding-top: 2rem !important;
     padding-bottom: 1rem !important;
   }
   /* Título e subtítulo principais - visíveis no mobile */
