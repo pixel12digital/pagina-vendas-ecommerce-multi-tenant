@@ -175,10 +175,10 @@
   .hero-section .hero-background {
     align-items: flex-start;
     padding-top: 8rem;
-    padding-bottom: 6rem;
+    padding-bottom: 10rem;
     padding-left: 1rem;
     padding-right: 2rem;
-    min-height: 50rem;
+    min-height: 55rem;
   }
   .hero-section .chat-image {
     max-width: 85%;
