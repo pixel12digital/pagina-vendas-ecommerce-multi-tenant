@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Agência especializada em implantação de e-commerce sob medida. Projeto personalizado com estrutura completa de vendas, do planejamento ao primeiro pedido.">
+    <title>Implantação de Loja Virtual Sob Medida | Agência de E-commerce</title>
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5LLND6PR');</script>
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #0066FF;
+            --primary-dark: #0052CC;
+            --secondary-color: #00D9A3;
+            --text-dark: #1A1A1A;
+            --text-gray: #4A5568;
+            --bg-light: #F7FAFC;
+            --white: #FFFFFF;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .cta-header {
+            background: var(--secondary-color);
+            color: var(--text-dark);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .cta-header:hover {
+            background: #00C08F;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 5rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-primary {
+            background: var(--secondary-color);
+            color: var(--text-dark);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.125rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 217, 163, 0.3);
+        }
+        
+        .cta-primary:hover {
+            background: #00C08F;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 217, 163, 0.4);
+        }
+        
+        /* Section Styling */
+        section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-gray);
+            font-size: 1.125rem;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Problem Section */
+        .problem {
+            background: var(--bg-light);
+        }
+        
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .problem-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            border-left: 4px solid #FF6B6B;
+        }
+        
+        .problem-card h3 {
+            color: #FF6B6B;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+        
+        .problem-card p {
+            color: var(--text-gray);
+        }
+        
+        /* Solution Section */
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .solution-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .solution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .solution-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.75rem;
+        }
+        
+        .solution-card h3 {
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+        }
+        
+        .solution-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+        
+        /* Process Section */
+        .process {
+            background: var(--bg-light);
+        }
+        
+        .process-timeline {
+            max-width: 800px;
+            margin: 3rem auto;
+            position: relative;
+        }
+        
+        .process-step {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .process-number {
+            min-width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            box-shadow: var(--shadow);
+        }
+        
+        .process-content {
+            flex: 1;
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+        
+        .process-content h3 {
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+        
+        .process-content p {
+            color: var(--text-gray);
+        }
+        
+        /* Included Section */
+        .included-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .included-item {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .check-icon {
+            min-width: 24px;
+            height: 24px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+        }
+        
+        .included-item h4 {
+            margin-bottom: 0.25rem;
+            color: var(--text-dark);
+        }
+        
+        .included-item p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+        
+        /* Target Section */
+        .target {
+            background: var(--bg-light);
+        }
+        
+        .target-list {
+            max-width: 600px;
+            margin: 3rem auto;
+        }
+        
+        .target-item {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .target-icon {
+            font-size: 2rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 5rem 0;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.25rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 3rem 0 1.5rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            margin-bottom: 2rem;
+        }
+        
+        .footer-cta {
+            background: var(--secondary-color);
+            color: var(--text-dark);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-cta:hover {
+            background: #00C08F;
+            transform: translateY(-2px);
+        }
+        
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        /* WhatsApp Icon */
+        .whatsapp-icon::before {
+            content: '💬';
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.875rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.125rem;
+            }
+            
+            .section-title {
+                font-size: 1.75rem;
+            }
+            
+            .process-step {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .problem-grid,
+            .solution-grid,
+            .included-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+        
+        /* Performance optimizations */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5LLND6PR"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">Pixel12 Digital</div>
+            <a href="#contato" class="cta-header" id="whatsapp-header">
+                <span class="whatsapp-icon"></span>
+                Fale com Especialista
+            </a>
+        </nav>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Implantação de Loja Virtual Sob Medida</h1>
+            <p class="hero-subtitle">Projeto personalizado com estrutura completa de vendas.<br>Do planejamento ao primeiro pedido.</p>
+            <a href="#contato" class="cta-primary" id="cta-hero">
+                <span class="whatsapp-icon"></span>
+                Agende Conversa Técnica
+            </a>
+        </div>
+    </section>
+    
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="container">
+            <h2 class="section-title">Os Riscos de Soluções Prontas</h2>
+            <p class="section-subtitle">Muitas empresas investem em plataformas prontas e enfrentam problemas críticos que impedem o crescimento</p>
+            
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <h3>❌ Lojas que Não Convertem</h3>
+                    <p>Templates genéricos que não refletem a identidade da marca e não convencem o cliente a comprar.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <h3>❌ Plataformas Limitadas</h3>
+                    <p>Impossibilidade de personalização e integrações necessárias para escalar as vendas.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <h3>❌ Operação Mal Estruturada</h3>
+                    <p>Falta de planejamento estratégico resulta em processos confusos e retrabalho constante.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Solution Section -->
+    <section class="solution">
+        <div class="container">
+            <h2 class="section-title">O que Significa Implantar um E-commerce Corretamente</h2>
+            <p class="section-subtitle">Estrutura profissional para vender online com eficiência e escalabilidade</p>
+            
+            <div class="solution-grid">
+                <div class="solution-card">
+                    <div class="solution-icon">📊</div>
+                    <h3>Planejamento da Operação</h3>
+                    <p>Análise completa do negócio e definição de estratégia comercial digital</p>
+                </div>
+                
+                <div class="solution-card">
+                    <div class="solution-icon">🏗️</div>
+                    <h3>Estrutura de Catálogo</h3>
+                    <p>Organização inteligente de produtos, categorias e atributos</p>
+                </div>
+                
+                <div class="solution-card">
+                    <div class="solution-icon">💳</div>
+                    <h3>Integração com Pagamentos</h3>
+                    <p>Configuração de gateways e métodos de pagamento seguros</p>
+                </div>
+                
+                <div class="solution-card">
+                    <div class="solution-icon">📦</div>
+                    <h3>Integração Logística</h3>
+                    <p>Cálculo de frete e integração com transportadoras</p>
+                </div>
+                
+                <div class="solution-card">
+                    <div class="solution-icon">🎨</div>
+                    <h3>Configuração da Vitrine</h3>
+                    <p>Design personalizado que reflete a identidade da marca</p>
+                </div>
+                
+                <div class="solution-card">
+                    <div class="solution-icon">🚀</div>
+                    <h3>Preparação para Vendas</h3>
+                    <p>Testes, ajustes e otimizações antes do lançamento</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Process Section -->
+    <section class="process">
+        <div class="container">
+            <h2 class="section-title">Processo de Implantação</h2>
+            <p class="section-subtitle">Metodologia estruturada em 6 etapas para garantir o sucesso do seu e-commerce</p>
+            
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="process-number">1</div>
+                    <div class="process-content">
+                        <h3>Diagnóstico do Negócio</h3>
+                        <p>Entendimento profundo do modelo de negócio, público-alvo e objetivos comerciais</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="process-number">2</div>
+                    <div class="process-content">
+                        <h3>Planejamento da Estrutura</h3>
+                        <p>Definição de arquitetura, funcionalidades e integrações necessárias</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="process-number">3</div>
+                    <div class="process-content">
+                        <h3>Implantação da Loja</h3>
+                        <p>Desenvolvimento e configuração da plataforma personalizada</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="process-number">4</div>
+                    <div class="process-content">
+                        <h3>Integrações Operacionais</h3>
+                        <p>Conexão com sistemas de pagamento, logística e gestão</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="process-number">5</div>
+                    <div class="process-content">
+                        <h3>Preparação da Operação</h3>
+                        <p>Treinamento da equipe e configuração de processos internos</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="process-number">6</div>
+                    <div class="process-content">
+                        <h3>Primeiro Pedido</h3>
+                        <p>Acompanhamento técnico até a primeira venda e estabilização</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Included Section -->
+    <section class="included">
+        <div class="container">
+            <h2 class="section-title">O que Está Incluído</h2>
+            <p class="section-subtitle">Entregáveis completos para estruturar sua operação digital</p>
+            
+            <div class="included-grid">
+                <div class="included-item">
+                    <div class="check-icon">✓</div>
+                    <div>
+                        <h4>Implantação da Loja Virtual</h4>
+                        <p>Plataforma completa e personalizada para suas necessidades</p>
+                    </div>
+                </div>
+                
+                <div class="included-item">
+                    <div class="check-icon">✓</div>
+                    <div>
+                        <h4>Configuração de Pagamentos</h4>
+                        <p>Integração com gateways e métodos de pagamento</p>
+                    </div>
+                </div>
+                
+                <div class="included-item">
+                    <div class="check-icon">✓</div>
+                    <div>
+                        <h4>Integração Logística</h4>
+                        <p>Cálculo de frete e rastreamento de pedidos</p>
+                    </div>
+                </div>
+                
+                <div class="included-item">
+                    <div class="check-icon">✓</div>
+                    <div>
+                        <h4>Estrutura de Categorias</h4>
+                        <p>Organização estratégica do catálogo de produtos</p>
+                    </div>
+                </div>
+                
+                <div class="included-item">
+                    <div class="check-icon">✓</div>
+                    <div>
+                        <h4>Configuração de Vitrine</h4>
+                        <p>Design responsivo e otimizado para conversão</p>
+                    </div>
+                </div>
+                
+                <div class="included-item">
+                    <div class="check-icon">✓</div>
+                    <div>
+                        <h4>Orientação Inicial de Operação</h4>
+                        <p>Suporte técnico e treinamento da equipe</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Target Section -->
+    <section class="target">
+        <div class="container">
+            <h2 class="section-title">Para Quem É Este Projeto</h2>
+            <p class="section-subtitle">Ideal para empresas que buscam profissionalização nas vendas online</p>
+            
+            <div class="target-list">
+                <div class="target-item">
+                    <div class="target-icon">🎯</div>
+                    <div>
+                        <h4>Empresas que querem iniciar no e-commerce</h4>
+                        <p>Estrutura profissional desde o início</p>
+                    </div>
+                </div>
+                
+                <div class="target-item">
+                    <div class="target-icon">📈</div>
+                    <div>
+                        <h4>Negócios que precisam estruturar vendas online</h4>
+                        <p>Migração de operação física para digital</p>
+                    </div>
+                </div>
+                
+                <div class="target-item">
+                    <div class="target-icon">⚡</div>
+                    <div>
+                        <h4>Empresas que desejam um projeto profissional</h4>
+                        <p>Soluções escaláveis e personalizadas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Final Section -->
+    <section class="cta-section" id="contato">
+        <div class="container">
+            <h2>Pronto para Estruturar Suas Vendas Online?</h2>
+            <p>Agende uma conversa técnica com nossos especialistas</p>
+            <a href="https://wa.me/5511999999999?text=Olá! Gostaria de saber mais sobre a implantação de e-commerce" class="cta-primary" id="cta-final" target="_blank" rel="noopener">
+                <span class="whatsapp-icon"></span>
+                Falar com Especialista Agora
+            </a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3 style="margin-bottom: 1rem;">Pixel12 Digital</h3>
+                <p style="opacity: 0.8; margin-bottom: 1.5rem;">Agência especializada em implantação de e-commerce</p>
+                <a href="https://wa.me/5511999999999?text=Olá! Gostaria de saber mais sobre a implantação de e-commerce" class="footer-cta" id="whatsapp-footer" target="_blank" rel="noopener">
+                    <span class="whatsapp-icon"></span>
+                    Entrar em Contato
+                </a>
+            </div>
+            <div class="copyright">
+                © 2026 Pixel12 Digital. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script>
+        // DataLayer initialization
+        window.dataLayer = window.dataLayer || [];
+        
+        // WhatsApp Header Click Event
+        document.getElementById('whatsapp-header').addEventListener('click', function(e) {
+            window.dataLayer.push({
+                'event': 'whatsapp_header_click',
+                'eventCategory': 'engagement',
+                'eventAction': 'click',
+                'eventLabel': 'whatsapp_header'
+            });
+        });
+        
+        // CTA Hero Click Event
+        document.getElementById('cta-hero').addEventListener('click', function(e) {
+            window.dataLayer.push({
+                'event': 'cta_hero_click',
+                'eventCategory': 'engagement',
+                'eventAction': 'click',
+                'eventLabel': 'cta_hero'
+            });
+        });
+        
+        // CTA Final Click Event
+        document.getElementById('cta-final').addEventListener('click', function(e) {
+            window.dataLayer.push({
+                'event': 'whatsapp_lead_submit',
+                'eventCategory': 'conversion',
+                'eventAction': 'click',
+                'eventLabel': 'cta_final'
+            });
+        });
+        
+        // WhatsApp Footer Click Event
+        document.getElementById('whatsapp-footer').addEventListener('click', function(e) {
+            window.dataLayer.push({
+                'event': 'whatsapp_footer_click',
+                'eventCategory': 'engagement',
+                'eventAction': 'click',
+                'eventLabel': 'whatsapp_footer'
+            });
+        });
+        
+        // Scroll depth tracking (25%, 50%, 75%, 100%)
+        let scrollMarks = {
+            25: false,
+            50: false,
+            75: false,
+            100: false
+        };
+        
+        window.addEventListener('scroll', function() {
+            const scrollPercentage = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight * 100;
+            
+            Object.keys(scrollMarks).forEach(function(mark) {
+                if (scrollPercentage >= mark && !scrollMarks[mark]) {
+                    scrollMarks[mark] = true;
+                    window.dataLayer.push({
+                        'event': 'scroll_depth',
+                        'eventCategory': 'engagement',
+                        'eventAction': 'scroll',
+                        'eventLabel': mark + '%'
+                    });
+                }
+            });
+        });
+        
+        // Performance tracking
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                if (window.performance && window.performance.timing) {
+                    const loadTime = window.performance.timing.loadEventEnd - window.performance.timing.navigationStart;
+                    
+                    window.dataLayer.push({
+                        'event': 'page_performance',
+                        'eventCategory': 'performance',
+                        'eventAction': 'load_time',
+                        'eventValue': Math.round(loadTime / 1000)
+                    });
+                }
+            }, 0);
+        });
+    </script>
+</body>
+</html>
