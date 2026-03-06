@@ -506,9 +506,34 @@
                 font-size: 1.75rem;
             }
             
-            .process-step {
-                flex-direction: column;
-                gap: 1rem;
+            /* Header: logo e botão lado a lado no mobile */
+            nav {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                gap: 0.5rem;
+                flex-wrap: nowrap;
+            }
+            
+            .logo img {
+                height: 32px;
+            }
+            
+            .cta-header {
+                padding: 0.5rem 0.875rem;
+                font-size: 0.8rem;
+                white-space: nowrap;
+            }
+            
+            /* Ícones centralizados no mobile */
+            .solution-card {
+                text-align: center;
+                align-items: center;
+            }
+            
+            .solution-icon {
+                margin-left: auto;
+                margin-right: auto;
             }
             
             .problem-grid,
@@ -517,9 +542,20 @@
                 grid-template-columns: 1fr;
             }
             
-            nav {
+            /* Processo: números como círculos perfeitos no mobile */
+            .process-step {
                 flex-direction: column;
                 gap: 1rem;
+                align-items: flex-start;
+            }
+            
+            .process-number {
+                width: 60px;
+                min-width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                flex-shrink: 0;
+                align-self: flex-start;
             }
         }
         
