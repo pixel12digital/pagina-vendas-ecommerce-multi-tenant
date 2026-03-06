@@ -25,9 +25,9 @@
         }
         
         :root {
-            --primary-color: #0066FF;
-            --primary-dark: #0052CC;
-            --secondary-color: #00D9A3;
+            --primary-color: #1E3A5F;
+            --primary-dark: #152D47;
+            --secondary-color: #FDB81E;
             --text-dark: #1A1A1A;
             --text-gray: #4A5568;
             --bg-light: #F7FAFC;
@@ -66,9 +66,13 @@
         }
         
         .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 40px;
+            width: auto;
         }
         
         .cta-header {
@@ -85,7 +89,7 @@
         }
         
         .cta-header:hover {
-            background: #00C08F;
+            background: #E5A71B;
             transform: translateY(-2px);
             box-shadow: var(--shadow-lg);
         }
@@ -148,9 +152,9 @@
         }
         
         .cta-primary:hover {
-            background: #00C08F;
+            background: #E5A71B;
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 217, 163, 0.4);
+            box-shadow: 0 8px 25px rgba(253, 184, 30, 0.4);
         }
         
         /* Section Styling */
@@ -231,13 +235,13 @@
         .solution-icon {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background: var(--primary-color);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1rem;
             font-size: 1.75rem;
+            color: var(--white);
         }
         
         .solution-card h3 {
@@ -271,7 +275,7 @@
         .process-number {
             min-width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background: var(--primary-color);
             color: var(--white);
             border-radius: 50%;
             display: flex;
@@ -410,8 +414,70 @@
         }
         
         .footer-cta:hover {
-            background: #00C08F;
+            background: #E5A71B;
             transform: translateY(-2px);
+        }
+        
+        /* Form Styles */
+        .form-section {
+            background: var(--white);
+            max-width: 600px;
+            margin: 3rem auto;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.875rem;
+            border: 2px solid #E2E8F0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(253, 184, 30, 0.1);
+        }
+        
+        .form-submit {
+            width: 100%;
+            background: var(--secondary-color);
+            color: var(--text-dark);
+            padding: 1rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.125rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+        
+        .form-submit:hover {
+            background: #E5A71B;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
         }
         
         .copyright {
@@ -477,8 +543,10 @@
     <!-- Header -->
     <header>
         <nav class="container">
-            <div class="logo">Pixel12 Digital</div>
-            <a href="#contato" class="cta-header" id="whatsapp-header">
+            <div class="logo">
+                <img src="assets/img/logo.webp" alt="Pixel12 Digital - Agência de E-commerce">
+            </div>
+            <a href="https://wa.me/5547997309525?text=Olá! Vim do site de e-commerce e gostaria de mais informações." class="cta-header" id="whatsapp-header" target="_blank" rel="noopener">
                 <span class="whatsapp-icon"></span>
                 Fale com Especialista
             </a>
@@ -492,7 +560,7 @@
             <p class="hero-subtitle">Projeto personalizado com estrutura completa de vendas.<br>Do planejamento ao primeiro pedido.</p>
             <a href="#contato" class="cta-primary" id="cta-hero">
                 <span class="whatsapp-icon"></span>
-                Agende Conversa Técnica
+                Solicitar Análise Gratuita
             </a>
         </div>
     </section>
@@ -530,13 +598,13 @@
             
             <div class="solution-grid">
                 <div class="solution-card">
-                    <div class="solution-icon">📊</div>
+                    <div class="solution-icon">�</div>
                     <h3>Planejamento da Operação</h3>
                     <p>Análise completa do negócio e definição de estratégia comercial digital</p>
                 </div>
                 
                 <div class="solution-card">
-                    <div class="solution-icon">🏗️</div>
+                    <div class="solution-icon">📦</div>
                     <h3>Estrutura de Catálogo</h3>
                     <p>Organização inteligente de produtos, categorias e atributos</p>
                 </div>
@@ -548,13 +616,13 @@
                 </div>
                 
                 <div class="solution-card">
-                    <div class="solution-icon">📦</div>
+                    <div class="solution-icon">�</div>
                     <h3>Integração Logística</h3>
                     <p>Cálculo de frete e integração com transportadoras</p>
                 </div>
                 
                 <div class="solution-card">
-                    <div class="solution-icon">🎨</div>
+                    <div class="solution-icon">🖥️</div>
                     <h3>Configuração da Vitrine</h3>
                     <p>Design personalizado que reflete a identidade da marca</p>
                 </div>
@@ -718,12 +786,65 @@
         </div>
     </section>
     
-    <!-- CTA Final Section -->
-    <section class="cta-section" id="contato">
+    <!-- Form Section -->
+    <section class="target" id="contato">
         <div class="container">
-            <h2>Pronto para Estruturar Suas Vendas Online?</h2>
-            <p>Agende uma conversa técnica com nossos especialistas</p>
-            <a href="https://wa.me/5511999999999?text=Olá! Gostaria de saber mais sobre a implantação de e-commerce" class="cta-primary" id="cta-final" target="_blank" rel="noopener">
+            <h2 class="section-title">Solicite uma Análise Gratuita</h2>
+            <p class="section-subtitle">Preencha o formulário e receba uma proposta personalizada para o seu negócio</p>
+            
+            <div class="form-section">
+                <form id="lead-form">
+                    <div class="form-group">
+                        <label for="nome">Nome Completo *</label>
+                        <input type="text" id="nome" name="nome" required placeholder="Digite seu nome">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="segmento">Segmento do Negócio *</label>
+                        <select id="segmento" name="segmento" required>
+                            <option value="">Selecione o segmento</option>
+                            <option value="Moda e Vestuário">Moda e Vestuário</option>
+                            <option value="Beleza e Cosméticos">Beleza e Cosméticos</option>
+                            <option value="Alimentos e Bebidas">Alimentos e Bebidas</option>
+                            <option value="Casa e Decoração">Casa e Decoração</option>
+                            <option value="Eletrônicos e Tecnologia">Eletrônicos e Tecnologia</option>
+                            <option value="Saúde e Bem-estar">Saúde e Bem-estar</option>
+                            <option value="Esportes e Fitness">Esportes e Fitness</option>
+                            <option value="Livros e Educação">Livros e Educação</option>
+                            <option value="Pet Shop">Pet Shop</option>
+                            <option value="Artesanato e Presentes">Artesanato e Presentes</option>
+                            <option value="Automotivo">Automotivo</option>
+                            <option value="Outro">Outro</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="prazo">Quando Deseja Iniciar? *</label>
+                        <select id="prazo" name="prazo" required>
+                            <option value="">Selecione o prazo</option>
+                            <option value="Apenas planejando">Apenas planejando</option>
+                            <option value="Nos próximos 30 dias">Nos próximos 30 dias</option>
+                            <option value="Nos próximos 60 dias">Nos próximos 60 dias</option>
+                            <option value="Nos próximos 90 dias">Nos próximos 90 dias</option>
+                            <option value="Urgente (iniciar imediatamente)">Urgente (iniciar imediatamente)</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="form-submit">
+                        <span class="whatsapp-icon"></span>
+                        Enviar Solicitação via WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Final Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Tem Dúvidas? Fale Diretamente Conosco</h2>
+            <p>Nossa equipe está pronta para atender você</p>
+            <a href="https://wa.me/5547997309525?text=Olá! Vim do site de e-commerce e gostaria de mais informações sobre implantação de loja virtual." class="cta-primary" id="cta-final" target="_blank" rel="noopener">
                 <span class="whatsapp-icon"></span>
                 Falar com Especialista Agora
             </a>
@@ -736,7 +857,7 @@
             <div class="footer-content">
                 <h3 style="margin-bottom: 1rem;">Pixel12 Digital</h3>
                 <p style="opacity: 0.8; margin-bottom: 1.5rem;">Agência especializada em implantação de e-commerce</p>
-                <a href="https://wa.me/5511999999999?text=Olá! Gostaria de saber mais sobre a implantação de e-commerce" class="footer-cta" id="whatsapp-footer" target="_blank" rel="noopener">
+                <a href="https://wa.me/5547997309525?text=Olá! Vim do site de e-commerce e gostaria de mais informações sobre implantação de loja virtual." class="footer-cta" id="whatsapp-footer" target="_blank" rel="noopener">
                     <span class="whatsapp-icon"></span>
                     Entrar em Contato
                 </a>
@@ -751,6 +872,26 @@
     <script>
         // DataLayer initialization
         window.dataLayer = window.dataLayer || [];
+        
+        // Lead Form Submit
+        document.getElementById('lead-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nome = document.getElementById('nome').value;
+            const segmento = document.getElementById('segmento').value;
+            const prazo = document.getElementById('prazo').value;
+            
+            const mensagem = `Olá! Vim do site de e-commerce e gostaria de solicitar uma análise.%0A%0A*Nome:* ${encodeURIComponent(nome)}%0A*Segmento:* ${encodeURIComponent(segmento)}%0A*Prazo:* ${encodeURIComponent(prazo)}`;
+            
+            window.dataLayer.push({
+                'event': 'whatsapp_lead_submit',
+                'eventCategory': 'conversion',
+                'eventAction': 'form_submit',
+                'eventLabel': 'lead_form'
+            });
+            
+            window.open(`https://wa.me/5547997309525?text=${mensagem}`, '_blank');
+        });
         
         // WhatsApp Header Click Event
         document.getElementById('whatsapp-header').addEventListener('click', function(e) {
@@ -775,8 +916,8 @@
         // CTA Final Click Event
         document.getElementById('cta-final').addEventListener('click', function(e) {
             window.dataLayer.push({
-                'event': 'whatsapp_lead_submit',
-                'eventCategory': 'conversion',
+                'event': 'whatsapp_cta_click',
+                'eventCategory': 'engagement',
                 'eventAction': 'click',
                 'eventLabel': 'cta_final'
             });
